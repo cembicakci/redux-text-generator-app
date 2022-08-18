@@ -1,7 +1,13 @@
 import React from 'react'
 import './style.css'
 
+import { useSelector } from 'react-redux'
+
 function Input() {
+
+  const paras = useSelector(state => state.text.paras);
+  console.log(paras)
+
   return (
     <div className='input-container'>
       <div className='input-item'>
