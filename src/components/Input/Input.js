@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './style.css'
 
 import { useSelector, useDispatch } from 'react-redux'
@@ -7,12 +7,17 @@ import { setParas, setFormat } from '../../redux/textSlice';
 function Input() {
 
   const dispatch = useDispatch();
+  const paras = useSelector(state => state.text.paras)
+  const [value, setValue] = useState();
+  useEffect(() => {
+    setValue(paras)
+  }, [paras])
 
   return (
     <div className='input-container'>
       <div className='input-item'>
         <label>Paragraphs</label>
-        <input type='number' onChange={(e) => dispatch(setParas(Number(e.target.value)))} />
+        <input value={value} type='number' onChange={(e) => dispatch(setParas(Number(e.target.value)))} />
       </div>
 
       <div className='input-item'>
