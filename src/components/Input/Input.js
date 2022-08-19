@@ -18,8 +18,8 @@ function Input() {
       <div className='input-item'>
         <label>Include HTML</label>
         <select onChange={(e) => dispatch(setFormat(e.target.value))}>
-          <option>Yes</option>
-          <option>No</option>
+          <option value='text'>Yes</option>
+          <option value='html'>No</option>
         </select>
       </div>
     </div>

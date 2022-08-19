@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchText } from '../../redux/textSlice';
 
+import './style.css'
+
 
 function Content() {
   const dispatch = useDispatch();
@@ -15,7 +17,7 @@ function Content() {
     dispatch(fetchText({ paras: paras, format: format }))
   }, [paras, format])
   return (
-    <div>{text}</div>
+    <div className='content'>{text}</div>
   )
 }
 
